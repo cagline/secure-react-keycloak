@@ -1,10 +1,17 @@
 import React from 'react'
 
-import { ExampleComponent } from 'secure-react-keycloak'
+import { KeycloakProvider } from 'secure-react-keycloak'
 import 'secure-react-keycloak/dist/index.css'
+import keycloak from "./keycloak";
+import { AppRouter } from "./routes/index";
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (<KeycloakProvider keycloak={keycloak}>
+    <div>
+      <h1>Keycloak</h1>
+      <AppRouter/>
+    </div>
+  </KeycloakProvider>)
 }
 
 export default App

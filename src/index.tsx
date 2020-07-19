@@ -1,10 +1,29 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+import AuthorizedFunction from './AuthorizedFunction';
+import AuthorizedElement from './AuthorizedElement';
+import PrivateRoute from './PrivateRoute';
+import {
+  KeycloakProvider,
+  useKeycloak,
+  withKeycloak,
+  ReactKeycloakInjectedProps,
+  ReactKeycloakHookResult
+} from '@react-keycloak/web';
 
-interface Props {
-  text: string
-}
+export { AuthorizedFunction };
+export { AuthorizedElement };
+export { PrivateRoute };
+export {
+  KeycloakProvider,
+  useKeycloak,
+  withKeycloak,
+  ReactKeycloakInjectedProps,
+  ReactKeycloakHookResult
+};
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export {
+  KeycloakEvent,
+  KeycloakEventHandler,
+  KeycloakLoadingCheck,
+  KeycloakTokens,
+  KeycloakTokensHandler
+} from '@react-keycloak/core';
