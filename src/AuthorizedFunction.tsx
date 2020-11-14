@@ -12,7 +12,6 @@ export default function AuthorizedFunction(roles: any) {
       return roles.some((r: any) => {
         const realm = keycloak.hasRealmRole(r);
         const resource = keycloak.hasResourceRole(r);
-        debugger
         console.log('realm , resource',realm , resource)
         return realm || resource;
       });
